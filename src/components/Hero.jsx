@@ -1,11 +1,12 @@
 import { useMemo } from 'react'
 import { FaDownload } from 'react-icons/fa'
 import { MdOutlineEmail } from 'react-icons/md'
-import heroImg from '../assets/hero.png'
+import profileImg from '../assets/profile/profile-placeholder.png'
 import SectionReveal from './SectionReveal'
 
 export default function Hero() {
   const downloadHref = useMemo(() => '#', [])
+
 
   return (
     <SectionReveal id="home" className="section section--hero">
@@ -48,9 +49,13 @@ export default function Hero() {
 
         <div className="hero__media" aria-hidden="true">
           <div className="hero__frame" />
-          <img className="hero__img" src={heroImg} alt="" />
-          <div className="hero__glow" />
+          <div className="hero__profileOrbit" aria-hidden="true">
+            <img className="hero__img hero__img--profile" src={profileImg} alt="" />
+            <div className="hero__orbitRing" />
+            <div className="hero__orbitGlow" />
+          </div>
         </div>
+
       </div>
     </SectionReveal>
   )

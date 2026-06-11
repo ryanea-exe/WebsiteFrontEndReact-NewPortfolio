@@ -3,18 +3,30 @@ import { MdEmail } from 'react-icons/md'
 
 const NAV_ITEMS = [
   { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'skills', label: 'Skills' },
-  { id: 'about', label: 'About' },
+  { id: 'contact', label: 'Contact' },
 ]
 
+
+function getNavOffsetPx() {
+  const navTop = 20
+  const navH = 76
+  return navTop + navH + 8
+}
 
 function scrollToId(id) {
   const el = document.getElementById(id)
   if (!el) return
-  el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+
+  const top = el.getBoundingClientRect().top + window.scrollY
+  const offset = getNavOffsetPx()
+
+  window.scrollTo({ top: Math.max(0, top - offset), behavior: 'smooth' })
 }
+
 
 export default function Footer() {
   return (
@@ -31,11 +43,9 @@ export default function Footer() {
               {item.label}
             </button>
           ))}
-          <a className="footerNav__link" href="mailto:hello@example.com">
-            Contact
-          </a>
         </nav>
       </div>
+
 
       <div className="container footer__socialRow">
         <div className="footerSocial" aria-label="Social links">

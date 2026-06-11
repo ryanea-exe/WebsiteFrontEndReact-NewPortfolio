@@ -1,8 +1,9 @@
 import SectionReveal from './SectionReveal'
-import heroImg from '../assets/hero.png'
+import profileImg from '../assets/profile/profile-placeholder.png'
 import { FaDownload } from 'react-icons/fa'
 
 export default function About() {
+
   return (
     <SectionReveal id="about" className="section">
       <div className="container about">
@@ -16,9 +17,10 @@ export default function About() {
         <div className="about__grid">
           <div className="about__left">
             <div className="about__photoWrap">
-              <img className="about__photo" src={heroImg} alt="" />
+              <img className="about__photo" src={profileImg} alt="" />
               <div className="about__photoGlow" />
             </div>
+
           </div>
 
           <div className="about__right">

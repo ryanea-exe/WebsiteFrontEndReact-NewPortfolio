@@ -9,18 +9,36 @@ const NAV_ITEMS = [
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'skills', label: 'Skills' },
+  { id: 'contact', label: 'Contact' },
 ]
 
+
+
+function getNavOffsetPx() {
+  // match CSS: .navbar top:20px and height: var(--navH)
+  const navTop = 20
+  const navH = 76
+  // extra padding to prevent tiny overlaps due to subpixel rendering
+  return navTop + navH + 8
+}
 
 function scrollToId(id) {
   const el = document.getElementById(id)
   if (!el) return
-  el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+
+  const top = el.getBoundingClientRect().top + window.scrollY
+  const offset = getNavOffsetPx()
+
+  window.scrollTo({ top: Math.max(0, top - offset), behavior: 'smooth' })
 }
+
+
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeId, setActiveId] = useState('home')
+
 
   const socials = useMemo(
     () => [
@@ -37,6 +55,46 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    const ids = NAV_ITEMS.map((i) => i.id)
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter(Boolean)
+
+    if (!sections.length) return
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        // choose the most-relevant intersecting section for stable active state
+        const intersecting = entries.filter((e) => e.isIntersecting)
+        if (!intersecting.length) return
+
+        // compute a score that prefers deeper visibility into the viewport focus area
+        const scored = intersecting
+          .map((e) => {
+            const r = (e.intersectionRatio ?? 0) // 0..1
+            return {
+              id: e.target.id,
+              score: r,
+            }
+          })
+          .sort((a, b) => b.score - a.score)
+
+        if (scored[0]?.id) setActiveId(scored[0].id)
+      },
+      {
+        threshold: [0.35, 0.4, 0.5],
+        // focus window around 35-40% from top; stable and avoids rapid switching
+        rootMargin: '-35% 0px -55% 0px',
+      },
+    )
+
+
+    sections.forEach((s) => obs.observe(s))
+    return () => obs.disconnect()
+  }, [])
+
 
   useEffect(() => {
     if (!open) return
@@ -65,11 +123,16 @@ export default function Navbar() {
             <button
               key={item.id}
               type="button"
-              className="navbar__link"
-              onClick={() => scrollToId(item.id)}
+              className={`navbar__link ${activeId === item.id ? 'navbar__link--active' : ''}`}
+              onClick={() => {
+                setActiveId(item.id)
+                scrollToId(item.id)
+              }}
             >
               {item.label}
             </button>
+
+
           ))}
         </nav>
 
