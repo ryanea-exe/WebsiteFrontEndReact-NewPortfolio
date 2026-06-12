@@ -11,7 +11,7 @@ const PROJECTS = [
     summary:
       'Developed a full-stack web application for foreign national monitoring, integrating data management, analytics dashboards, automated notifications, and reporting systems.',
     tech: ['React', 'Vite', 'REST API', 'Chart.js'],
-    image: '/public/login-tracking-wna.png',
+    image: '/login-tracking-wna.png',
     details: {
       challenges: [
         'Mengoptimasi rendering data besar tanpa lag.',
@@ -29,7 +29,7 @@ const PROJECTS = [
     title: 'Singobarong System',
     summary: 'Built a full-stack inventory and asset management platform with workflow automation, maintenance tracking, reporting, and role-based access control.',
     tech: ['Laravel', 'MySQL', 'JWT', 'React'],
-    image: '/public/login-singobarong.png',
+    image: '/login-singobarong.png',
     details: {
       challenges: [
         'Keamanan autentikasi dan otorisasi.',
@@ -47,7 +47,7 @@ const PROJECTS = [
     title: 'SDawetJabung System',
     summary: 'Built a responsive WordPress website with customized content management features to streamline information publishing and administration.',
     tech: ['Next (optional)', 'Node', 'Markdown', 'React'],
-    image: '/public/foreigners-sdawetjabung.png',
+    image: '/foreigners-sdawetjabung.png',
     details: {
       challenges: ['Menjaga konsistensi layout dari konten Markdown.', 'Menyediakan preview real-time.'],
       solutions: ['Parser Markdown terstandar dan sandbox preview.', 'Debounce dan caching state preview.'],
