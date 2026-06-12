@@ -35,7 +35,7 @@ export default function Footer() {
       <div className="container">
         <div className="flex flex-col items-center text-center">
           {/* profile avatar like navbar/header */}
-          <div className="mt-6 flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-[rgba(255,255,255,0.04)] shadow-[0_0_0_1px_rgba(255,255,255,0.06)]">
+          <div className="mt-6 flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-[rgba(255,255,255,0.04)] shadow-[0_0_0_1px_rgba(255,255,255,0.06)]">
             <span className="text-sm font-semibold text-white/90">RY</span>
           </div>
 
@@ -49,7 +49,7 @@ export default function Footer() {
                 key={item.id}
                 type="button"
                 onClick={() => scrollToId(item.id)}
-                className="flex items-center justify-center rounded-lg border border-transparent px-4 py-2 text-xs font-semibold text-[var(--text-h)]/80 transition-all duration-300 hover:text-[var(--text-h)] hover:bg-white/5 hover:-translate-y-0.5 hover:border-white/35 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.18)]"
+                className="flex items-center justify-center rounded-xl border border-transparent px-4 py-2 text-xs font-semibold text-[var(--text-h)]/80 transition-all duration-300 hover:text-[var(--text-h)] hover:bg-white/5 hover:-translate-y-0.5"
               >
                 {item.label}
               </button>
@@ -59,7 +59,7 @@ export default function Footer() {
           {/* Social media (2nd section) */}
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <a
-              className="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-white/15 text-white/95 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/10 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.12)]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 text-white/95 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
               href="https://www.linkedin.com/in/ryan-erlangga-ardiansyah/"
               aria-label="LinkedIn"
               target="_blank"
@@ -69,7 +69,7 @@ export default function Footer() {
             </a>
 
             <a
-              className="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-white/15 text-white/95 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/10 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.12)]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 text-white/95 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
               href="https://github.com/ryanea-exe"
               aria-label="GitHub"
               target="_blank"
@@ -79,7 +79,7 @@ export default function Footer() {
             </a>
 
             <a
-              className="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-white/15 text-white/95 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/10 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.12)]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 text-white/95 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
               href="https://www.instagram.com/ryanea__/"
               aria-label="Instagram"
               target="_blank"
@@ -89,7 +89,7 @@ export default function Footer() {
             </a>
 
             <a
-              className="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-white/15 text-white/95 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/10 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.12)]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 text-white/95 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
               href="mailto:ryanhillfree23@gmail.com"
               aria-label="Email"
             >

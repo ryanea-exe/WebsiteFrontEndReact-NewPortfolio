@@ -159,6 +159,7 @@
 
 /* Make sure footer/button styles are consistent but add submit hover */
 .contactForm__btn {
+  font-size: 14px;
   justify-self: start;
 }
 

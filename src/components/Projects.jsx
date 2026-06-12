@@ -9,7 +9,7 @@ const PROJECTS = [
     id: 'project-1',
     title: 'WNA Tracking System',
     summary:
-      'Dashboard analytics dengan UI modern, filter yang cepat, dan performa yang dioptimasi.',
+      'Developed a full-stack web application for foreign national monitoring, integrating data management, analytics dashboards, automated notifications, and reporting systems.',
     tech: ['React', 'Vite', 'REST API', 'Chart.js'],
     image: '/public/login-tracking-wna.png',
     details: {
@@ -27,7 +27,7 @@ const PROJECTS = [
   {
     id: 'project-2',
     title: 'Singobarong System',
-    summary: 'Platform e-commerce full stack dengan fitur autentikasi dan manajemen produk.',
+    summary: 'Built a full-stack inventory and asset management platform with workflow automation, maintenance tracking, reporting, and role-based access control.',
     tech: ['Laravel', 'MySQL', 'JWT', 'React'],
     image: '/public/login-singobarong.png',
     details: {
@@ -45,7 +45,7 @@ const PROJECTS = [
   {
     id: 'project-3',
     title: 'SDawetJabung System',
-    summary: 'CMS ringan untuk konten portfolio dengan preview dan versioning.',
+    summary: 'Built a responsive WordPress website with customized content management features to streamline information publishing and administration.',
     tech: ['Next (optional)', 'Node', 'Markdown', 'React'],
     image: '/public/foreigners-sdawetjabung.png',
     details: {
