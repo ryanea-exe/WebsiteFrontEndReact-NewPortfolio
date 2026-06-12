@@ -10,48 +10,60 @@ const PROJECTS = [
     title: 'WNA Tracking System',
     summary:
       'Developed a full-stack web application for foreign national monitoring, integrating data management, analytics dashboards, automated notifications, and reporting systems.',
-    tech: ['React', 'Vite', 'REST API', 'Chart.js'],
+    tech: ['Laravel', 'PHP', 'Tailwind', 'MySQL', 'etc.'],
     image: '/login-tracking-wna.png',
     details: {
       challenges: [
-        'Mengoptimasi rendering data besar tanpa lag.',
-        'Menyediakan filtering yang responsif dan konsisten.',
+        '• Handling complex immigration data across multiple categories.',
+        '• Preventing missed stay permit expiration deadlines.',
+        '• Generating accurate statistical reports from diverse immigration data.',
       ],
       solutions: [
-        'Memoization & rendering tersegmentasi.',
-        'Skeleton loading, caching, dan pagination.',
+        '• Built a centralized database with advanced filtering and analytics.',
+        '• Implemented automated alerts and dashboard-based monitoring.',
+        '• Built interactive dashboards and automated analytics reporting.',
       ],
-      stack: ['React', 'Vite', 'React Query (optional)', 'CSS', 'Chart.js'],
+      stack: ['Laravel', 'PHP', 'Tailwind', 'MySQL', 'RESTful Architecture', 'Chart.js', 'DataTables', 'etc.'],
     },
   },
   {
     id: 'project-2',
     title: 'Singobarong System',
     summary: 'Built a full-stack inventory and asset management platform with workflow automation, maintenance tracking, reporting, and role-based access control.',
-    tech: ['Laravel', 'MySQL', 'JWT', 'React'],
+    tech: ['Laravel', 'PHP', 'TypeScript', 'Tailwind', 'etc.'],
     image: '/login-singobarong.png',
     details: {
       challenges: [
-        'Keamanan autentikasi dan otorisasi.',
-        'Integrasi checkout dan manajemen stok.',
+        '• Ensuring accurate asset tracking and stock monitoring.',
+        '• Managing approval workflows and maintenance requests efficiently.',
+        '• Maintaining data consistency across inventory, asset, and vehicle records.',
       ],
       solutions: [
-        'Role-based access control dan validasi server-side.',
-        'Transaksi database dan update stok atomik.',
+        '• Built real-time inventory monitoring and reporting features.',
+        '• Implemented role-based workflows with automated notifications.',
+        '• Designed a centralized database structure for integrated asset management.',
       ],
-      stack: ['Laravel', 'MySQL', 'JWT', 'API Resources', 'React'],
+      stack: ['Laravel', 'PHP', 'TypeScript', 'Tailwind', 'MySQL', 'RESTful Architecture', 'DataTables', 'etc.'],
     },
   },
   {
     id: 'project-3',
     title: 'SDawetJabung System',
     summary: 'Built a responsive WordPress website with customized content management features to streamline information publishing and administration.',
-    tech: ['Next (optional)', 'Node', 'Markdown', 'React'],
+    tech: ['WordPress', 'HTML', 'CSS', 'Etc.'],
     image: '/foreigners-sdawetjabung.png',
     details: {
-      challenges: ['Menjaga konsistensi layout dari konten Markdown.', 'Menyediakan preview real-time.'],
-      solutions: ['Parser Markdown terstandar dan sandbox preview.', 'Debounce dan caching state preview.'],
-      stack: ['React', 'Node', 'Markdown', 'REST API'],
+      challenges: [
+        '• Maintaining organized and scalable website content.', 
+        '• Optimizing website performance and usability.',
+        '• Keeping website content organized and easy to update.',
+      ],
+      solutions: [
+        '• Leveraged WordPress CMS for efficient content administration.', 
+        '• Applied responsive design and performance optimization techniques.',
+        '• Utilized WordPress content management features for streamlined updates.',
+      ],
+      stack: ['WordPress', 'HTML', 'CSS', 'Etc.'],
     },
   },
 ]
@@ -90,7 +102,7 @@ function Modal({ open, onClose, project }) {
             <p className="modal__summary">{project.summary}</p>
 
             <div className="modal__section">
-              <h4 className="modal__h">Tantangan</h4>
+              <h4 className="modal__h">Challenge</h4>
               <ul className="modal__ul">
                 {project.details.challenges.map((c) => (
                   <li key={c}>{c}</li>
@@ -99,7 +111,7 @@ function Modal({ open, onClose, project }) {
             </div>
 
             <div className="modal__section">
-              <h4 className="modal__h">Solusi</h4>
+              <h4 className="modal__h">Solution</h4>
               <ul className="modal__ul">
                 {project.details.solutions.map((s) => (
                   <li key={s}>{s}</li>
@@ -125,7 +137,7 @@ function Modal({ open, onClose, project }) {
               <a className="btn btn--primary" href="#" onClick={(e) => e.preventDefault()}>
                 <FiExternalLink /> Live Demo
               </a>
-              <a className="btn btn--secondary" href="#" onClick={(e) => e.preventDefault()}>
+              <a className="btn btn--secondary" href="https://github.com/ryanea-exe?tab=repositories" target="_blank" rel="noreferrer">
                 <FiGithub /> GitHub
               </a>
             </div>
@@ -174,7 +186,7 @@ export default function Projects() {
                   <a className="btn btn--ghost" href="#" onClick={(e) => e.preventDefault()}>
                     <FiExternalLink /> Live Demo
                   </a>
-                  <a className="btn btn--ghost" href="#" onClick={(e) => e.preventDefault()}>
+                  <a className="btn btn--ghost" href="https://github.com/ryanea-exe?tab=repositories" target="_blank" rel="noreferrer">
                     <FiGithub /> GitHub
                   </a>
                 </div>
