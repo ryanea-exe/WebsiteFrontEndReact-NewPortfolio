@@ -58,41 +58,45 @@ export default function Navbar() {
 
   useEffect(() => {
     const ids = NAV_ITEMS.map((i) => i.id)
-    const sections = ids
-      .map((id) => document.getElementById(id))
-      .filter(Boolean)
+    let rafId = 0
 
-    if (!sections.length) return
+    const update = () => {
+      const navOffset = getNavOffsetPx()
 
-    const obs = new IntersectionObserver(
-      (entries) => {
-        // choose the most-relevant intersecting section for stable active state
-        const intersecting = entries.filter((e) => e.isIntersecting)
-        if (!intersecting.length) return
+      // Make it deterministic: pick the section whose top is closest to the navbar offset.
+      // This avoids "off by one" behavior during smooth scroll.
+      let bestId = ids[0]
+      let bestDist = Infinity
 
-        // compute a score that prefers deeper visibility into the viewport focus area
-        const scored = intersecting
-          .map((e) => {
-            const r = (e.intersectionRatio ?? 0) // 0..1
-            return {
-              id: e.target.id,
-              score: r,
-            }
-          })
-          .sort((a, b) => b.score - a.score)
+      for (const id of ids) {
+        const el = document.getElementById(id)
+        if (!el) continue
 
-        if (scored[0]?.id) setActiveId(scored[0].id)
-      },
-      {
-        threshold: [0.35, 0.4, 0.5],
-        // focus window around 35-40% from top; stable and avoids rapid switching
-        rootMargin: '-35% 0px -55% 0px',
-      },
-    )
+        const top = el.getBoundingClientRect().top
+        const dist = Math.abs(top - navOffset)
 
+        if (dist < bestDist) {
+          bestDist = dist
+          bestId = id
+        }
+      }
 
-    sections.forEach((s) => obs.observe(s))
-    return () => obs.disconnect()
+      setActiveId(bestId)
+    }
+
+    const onScroll = () => {
+      cancelAnimationFrame(rafId)
+      rafId = requestAnimationFrame(update)
+    }
+
+    update()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', update)
+    return () => {
+      cancelAnimationFrame(rafId)
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', update)
+    }
   }, [])
 
 
