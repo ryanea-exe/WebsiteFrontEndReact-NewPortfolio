@@ -115,7 +115,7 @@ export default function Navbar() {
           aria-label="Go to top"
         >
           <span className="navbar__avatar" aria-hidden="true" />
-          <span className="navbar__name">Ryan</span>
+          {/* <span className="navbar__name">Ryan</span> */}
         </button>
 
         <nav className="navbar__nav" aria-label="Main navigation">

@@ -15,15 +15,15 @@ export default function Hero() {
 
           <div className="hero__eyebrow">
             <span className="dot" aria-hidden="true" />
-            Available for freelance
+            Open for collaboration
           </div>
           <h1 className="hero__title">
             Hi, I'm <span className="gradientText">Ryan</span>
           </h1>
           <h2 className="hero__subtitle">Web Developer</h2>
           <p className="hero__desc">
-            Membuat aplikasi web modern yang cepat, responsif, dan mudah digunakan. Fokus pada
-            kualitas UI/UX, performa, dan arsitektur yang scalable.
+            Web Developer & Software Engineer | Machine Learning Cohort at Bangkit Academy 2024 | 
+            Bachelor of Computer Science | Building a Data Inventory System, Foreign Tracking System, & Scheduling Application
           </p>
 
           <div className="hero__actions">
@@ -35,6 +35,7 @@ export default function Hero() {
             </a>
           </div>
 
+          {/*
           <div className="hero__meta">
             <div className="metaCard">
               <div className="metaCard__k">Focus</div>
@@ -45,6 +46,7 @@ export default function Hero() {
               <div className="metaCard__v">Clean UI, Clean Code</div>
             </div>
           </div>
+          */}
         </div>
 
         <div className="hero__media" aria-hidden="true">

@@ -10,7 +10,11 @@ export default function About() {
         <header className="aboutHeader">
           <h2 className="aboutHeader__title">About Me</h2>
           <p className="aboutHeader__desc">
-            Passionate Full Stack Developer with experience building modern web applications and solving real-world problems through technology.
+            {/* Passionate Full Stack Developer with experience building modern web applications and solving real-world problems through technology. */}
+            Informatics Engineering graduate with a focus on Full-Stack Web Development and Software Engineering. Experienced in developing web applications 
+            using Laravel Framework, PHP, JavaScript, Vue.js, Modern UI Framework, MySQL and PostgreSQL Database, including feature development, database management, 
+            and system performance optimization. Also experienced in IT Support and Web Administration to support operational and technical needs and have a basic 
+            understanding of Machine Learning (Python) for data-driven solution development. Passionate about building efficient, scalable, and impactful digital solutions.
           </p>
         </header>
 

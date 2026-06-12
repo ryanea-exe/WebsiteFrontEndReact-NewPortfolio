@@ -30,7 +30,8 @@
   transform: translateX(-50%);
 
   width: min(var(--container), calc(100% - 40px));
-  height: var(--navH);
+  /* height: var(--navH); */
+  height: 60px;
   display: flex;
   align-items: center;
 
@@ -124,12 +125,13 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  font-size: 14px;
   padding: 10px 14px;
   border-radius: 14px;
   color: #fff;
   background: linear-gradient(135deg, rgba(170, 59, 255, 0.95), rgba(99, 102, 241, 0.95));
   box-shadow: 0 14px 40px rgba(170, 59, 255, 0.22);
-  font-weight: 650;
+  font-weight: 400;
   transition: transform 180ms ease, filter 180ms ease;
 }
 
@@ -304,6 +306,7 @@
 }
 
 .hero__eyebrow {
+  margin-bottom: 20px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -316,8 +319,8 @@
 
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: linear-gradient(135deg, rgba(170, 59, 255, 1), rgba(99, 102, 241, 1));
   box-shadow: 0 0 0 6px rgba(170, 59, 255, 0.12);
@@ -350,7 +353,7 @@
 }
 
 .hero__actions {
-  margin-top: 22px;
+  margin-top: 30px;
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
@@ -1101,8 +1104,8 @@
 
 /* Theme Toggle (icon-only circle) */
 .themeToggle {
-  width: 46px;
-  height: 46px;
+  width: 40px;
+  height: 40px;
   display: inline-grid;
   place-items: center;
 
