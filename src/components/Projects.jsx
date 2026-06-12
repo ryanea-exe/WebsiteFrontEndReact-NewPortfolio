@@ -7,11 +7,11 @@ import { createPortal } from 'react-dom'
 const PROJECTS = [
   {
     id: 'project-1',
-    title: 'Pulse Admin Dashboard',
+    title: 'WNA Tracking System',
     summary:
       'Dashboard analytics dengan UI modern, filter yang cepat, dan performa yang dioptimasi.',
     tech: ['React', 'Vite', 'REST API', 'Chart.js'],
-    image: '/public/project-placeholder-1.png',
+    image: '/public/login-tracking-wna.png',
     details: {
       challenges: [
         'Mengoptimasi rendering data besar tanpa lag.',
@@ -26,10 +26,10 @@ const PROJECTS = [
   },
   {
     id: 'project-2',
-    title: 'E-Commerce Starter',
+    title: 'Singobarong System',
     summary: 'Platform e-commerce full stack dengan fitur autentikasi dan manajemen produk.',
     tech: ['Laravel', 'MySQL', 'JWT', 'React'],
-    image: '/public/project-placeholder-2.png',
+    image: '/public/login-singobarong.png',
     details: {
       challenges: [
         'Keamanan autentikasi dan otorisasi.',
@@ -44,10 +44,10 @@ const PROJECTS = [
   },
   {
     id: 'project-3',
-    title: 'Portfolio CMS',
+    title: 'SDawetJabung System',
     summary: 'CMS ringan untuk konten portfolio dengan preview dan versioning.',
     tech: ['Next (optional)', 'Node', 'Markdown', 'React'],
-    image: '/public/project-placeholder-3.png',
+    image: '/public/foreigners-sdawetjabung.png',
     details: {
       challenges: ['Menjaga konsistensi layout dari konten Markdown.', 'Menyediakan preview real-time.'],
       solutions: ['Parser Markdown terstandar dan sandbox preview.', 'Debounce dan caching state preview.'],
@@ -147,7 +147,7 @@ export default function Projects() {
       <div className="container">
         <header className="sectionHeader">
           <h2 className="sectionHeader__title">Featured Projects</h2>
-          <p className="sectionHeader__desc">Beberapa proyek unggulan dengan detail yang mudah dipahami.</p>
+          <p className="sectionHeader__desc">Some of the featured projects with easy-to-understand details on Maganghub at "Kantor Imigrasi Kelas II Non TPI Ponorogo"</p>
         </header>
 
         <div className="projectsRow">
@@ -155,7 +155,9 @@ export default function Projects() {
             <article key={p.id} className="projectCard">
               <div className="projectCard__media" aria-hidden="true">
                 <div className="projectCard__bg" />
+                <img className="projectCard__img" src={p.image} alt="" />
               </div>
+
 
               <div className="projectCard__body">
                 <h3 className="projectCard__title">{p.title}</h3>
@@ -182,7 +184,7 @@ export default function Projects() {
                   className="btn btn--primary btn--full"
                   onClick={() => setActiveId(p.id)}
                 >
-                  <FiMoreHorizontal /> Baca Selengkapnya
+                  <FiMoreHorizontal /> Read More
                 </button>
               </div>
             </article>

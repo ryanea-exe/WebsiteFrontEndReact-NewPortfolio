@@ -138,7 +138,7 @@ export default function Navbar() {
 
         <div className="navbar__actions">
           <ThemeToggle />
-          <a className="navbar__talk" href="mailto:hello@example.com">
+          <a className="navbar__talk" href="mailto:ryanhillfree@gmail.com">
             Let's Talk
           </a>
           <button

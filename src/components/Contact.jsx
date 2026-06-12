@@ -47,8 +47,8 @@ export default function Contact() {
                 <span className="contactInfoIcon" aria-hidden="true">
                   <MdEmail />
                 </span>
-                <a className="contactInfoLink" href="mailto:hello@example.com">
-                  hello@example.com
+                <a className="contactInfoLink" href="mailto:ryanhillfree23@gmail.com">
+                  ryanhillfree23@gmail.com
                 </a>
               </div>
 
@@ -56,7 +56,7 @@ export default function Contact() {
                 <span className="contactInfoIcon" aria-hidden="true">
                   <FaLinkedinIn />
                 </span>
-                <a className="contactInfoLink" href="#" onClick={(e) => e.preventDefault()}>
+                <a className="contactInfoLink" href="https://www.linkedin.com/in/ryan-erlangga-ardiansyah/" target="_blank" rel="noopener noreferrer">
                   LinkedIn
                 </a>
               </div>
@@ -65,8 +65,8 @@ export default function Contact() {
                 <span className="contactInfoIcon" aria-hidden="true">
                   <FaGithub />
                 </span>
-                <a className="contactInfoLink" href="#" onClick={(e) => e.preventDefault()}>
-                  GitHub
+                <a className="contactInfoLink" href="https://github.com/ryanea-exe" target="_blank" rel="noopener noreferrer">
+                  Github
                 </a>
               </div>
 
@@ -74,7 +74,7 @@ export default function Contact() {
                 <span className="contactInfoIcon" aria-hidden="true">
                   <FaInstagram />
                 </span>
-                <a className="contactInfoLink" href="#" onClick={(e) => e.preventDefault()}>
+                <a className="contactInfoLink" href="https://www.instagram.com/ryanea__/" target="_blank" rel="noopener noreferrer">
                   Instagram
                 </a>
               </div>
@@ -83,7 +83,7 @@ export default function Contact() {
                 <span className="contactInfoIcon" aria-hidden="true">
                   <FaMapMarkerAlt />
                 </span>
-                <span className="contactInfoText">Indonesia</span>
+                <span className="contactInfoText">East Java, Indonesia</span>
               </div>
             </div>
 
@@ -91,9 +91,9 @@ export default function Contact() {
               Prefer email? I typically respond within 1–2 business days.
             </div>
 
-            <a className="btn btn--ghost contactDownload" href={downloadHref}>
+            {/* <a className="btn btn--ghost contactDownload" href={downloadHref}>
               View Portfolio PDF
-            </a>
+            </a> */}
           </div>
 
           <form className="contactForm" onSubmit={handleSubmit}>
