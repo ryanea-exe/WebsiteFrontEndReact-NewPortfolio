@@ -8,7 +8,7 @@ import {
 } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 
-import './Contact.css'
+import '../Contact.css'
 
 
 export default function Contact() {

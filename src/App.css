@@ -76,8 +76,18 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(170, 59, 255, 0.95), rgba(59, 130, 246, 0.95));
-  box-shadow: 0 10px 30px rgba(170, 59, 255, 0.25);
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.navbar__avatar,
+.hero__img--profile,
+.about__photo,
+.footer img {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .navbar__name {
@@ -319,6 +329,12 @@
   font-weight: 400;
 }
 
+.hero__img--profile {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 
 .dot {
   width: 8px;
@@ -471,17 +487,16 @@
   position: relative;
   height: 420px;
   border-radius: 26px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  background: transparent;
   overflow: hidden;
-
 }
 
 .hero__frame {
   position: absolute;
   inset: 16px;
   border-radius: 22px;
-  border: 1px solid var(--border);
+  /* border: 1px solid var(--border); */
   background:
     radial-gradient(500px circle at 20% 20%, rgba(170, 59, 255, 0.25), transparent 40%),
     radial-gradient(500px circle at 90% 10%, rgba(59, 130, 246, 0.25), transparent 45%);
