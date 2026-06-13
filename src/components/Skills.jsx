@@ -23,6 +23,7 @@ import {
 
 import {
   SiLaravel,
+  SiNextdotjs,
   SiPython,
   SiTypescript,
   SiKotlin,
@@ -84,6 +85,7 @@ const SKILLS = [
   { name: 'Tailwind CSS', Icon: SiTailwindcss },
   { name: 'Bootstrap', Icon: FaBootstrap },
   { name: 'Laravel', Icon: FaLaravel },
+  { name: 'Next JS', Icon: SiNextdotjs },
   { name: 'CodeIgniter', Icon: SiCodeigniter },
   { name: 'Flask', Icon: FaFlask },
   { name: 'Filament', Icon: SiFilament },

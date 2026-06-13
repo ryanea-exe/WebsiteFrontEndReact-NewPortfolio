@@ -8,6 +8,8 @@ const PROJECTS = [
   {
     id: 'project-1',
     title: 'WNA Tracking System',
+    liveDemoUrl: 'https://www.linkedin.com/posts/ryan-erlangga-ardiansyah_laravel-webdevelopment-fullstackdeveloper-ugcPost-7467056578592964608-rFBx/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACH8VVgB3TsOGz8rhBvscTxV7UOXQ_VUB3Q',
+    githubUrl: 'https://github.com/ryanea-exe/WebsiteLaravel11-TrackingWNAKanimPonorogo2.git' ,
     summary:
       'Developed a full-stack web application for foreign national monitoring, integrating data management, analytics dashboards, automated notifications, and reporting systems.',
     tech: ['Laravel', 'PHP', 'Tailwind', 'MySQL', 'etc.'],
@@ -29,7 +31,10 @@ const PROJECTS = [
   {
     id: 'project-2',
     title: 'Singobarong System',
-    summary: 'Built a full-stack inventory and asset management platform with workflow automation, maintenance tracking, reporting, and role-based access control.',
+    liveDemoUrl: 'https://www.linkedin.com/posts/ryan-erlangga-ardiansyah_laravel-webdevelopment-informationsystem-ugcPost-7462856785536770048-fuPp/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACH8VVgB3TsOGz8rhBvscTxV7UOXQ_VUB3Q',
+    githubUrl: 'https://github.com/ryanea-exe/WebsiteLaravel11-InventoryPengelolaBMNKanimPonorogo.git',
+    summary:
+      'Built a full-stack inventory and asset management platform with workflow automation, maintenance tracking, reporting, and role-based access control.',
     tech: ['Laravel', 'PHP', 'TypeScript', 'Tailwind', 'etc.'],
     image: '/login-singobarong.png',
     details: {
@@ -49,7 +54,10 @@ const PROJECTS = [
   {
     id: 'project-3',
     title: 'SDawetJabung System',
+    liveDemoUrl: 'https://sdawetjabung.com/visit-visa',
+    githubUrl: '-',
     summary: 'Built a responsive WordPress website with customized content management features to streamline information publishing and administration.',
+
     tech: ['WordPress', 'HTML', 'CSS', 'Etc.'],
     image: '/foreigners-sdawetjabung.png',
     details: {
@@ -140,24 +148,31 @@ function Modal({ open, onClose, project }) {
               </div>
             </div>
 
-            <div className="modal__links">
+              <div className="modal__links">
               <a
                 className="btn btn--primary"
-                href={project.liveDemoUrl || '#'}
+                href={project.liveDemoUrl}
                 target="_blank"
                 rel="noreferrer"
                 onClick={(e) => {
                   if (!project.liveDemoUrl) e.preventDefault()
                 }}
+                aria-disabled={!project.liveDemoUrl}
+                style={{ pointerEvents: project.liveDemoUrl ? 'auto' : 'none', opacity: project.liveDemoUrl ? 1 : 0.6 }}
               >
                 <FiExternalLink /> Live Demo
               </a>
 
               <a
                 className="btn btn--secondary"
-                href={project.githubUrl || 'https://github.com/'}
+                href={project.githubUrl}
                 target="_blank"
                 rel="noreferrer"
+                onClick={(e) => {
+                  if (!project.githubUrl) e.preventDefault()
+                }}
+                aria-disabled={!project.githubUrl}
+                style={{ pointerEvents: project.githubUrl ? 'auto' : 'none', opacity: project.githubUrl ? 1 : 0.6 }}
               >
                 <FiGithub /> GitHub
               </a>
@@ -217,11 +232,32 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="projectCard__actions">
-                  <a className="btn btn--ghost" href="#" onClick={(e) => e.preventDefault()}>
+              <div className="projectCard__actions">
+                  <a
+                    className="btn btn--ghost"
+                    href={p.liveDemoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => {
+                      if (!p.liveDemoUrl) e.preventDefault()
+                    }}
+                    aria-disabled={!p.liveDemoUrl}
+                    style={{ pointerEvents: p.liveDemoUrl ? 'auto' : 'none', opacity: p.liveDemoUrl ? 1 : 0.6 }}
+                  >
                     <FiExternalLink /> Live Demo
                   </a>
-                  <a className="btn btn--ghost" href="https://github.com/ryanea-exe?tab=repositories" target="_blank" rel="noreferrer">
+
+                  <a
+                    className="btn btn--ghost"
+                    href={p.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => {
+                      if (!p.githubUrl) e.preventDefault()
+                    }}
+                    aria-disabled={!p.githubUrl}
+                    style={{ pointerEvents: p.githubUrl ? 'auto' : 'none', opacity: p.githubUrl ? 1 : 0.6 }}
+                  >
                     <FiGithub /> GitHub
                   </a>
                 </div>
