@@ -2,8 +2,8 @@ import { useMemo } from 'react'
 import { FaDownload } from 'react-icons/fa'
 import { MdOutlineEmail } from 'react-icons/md'
 import SectionReveal from './SectionReveal'
-
 import HeroOrbit from './HeroOrbit'
+import profileImage from '/avatar.png'
 
 import {
   FaTools, 
@@ -49,8 +49,6 @@ import {
   SiArduino,
 } from 'react-icons/si'
 
-import profileImage from '/avatar.png'
-
 const orbitIcons = [
   { Icon: FaPhp },
   { Icon: FaReact },
@@ -65,16 +63,13 @@ const orbitIcons = [
   { Icon: FaGit },
 ]
 
-
 export default function Hero() {
   const downloadHref = useMemo(() => '#', [])
-
 
   return (
     <SectionReveal id="home" className="section section--hero">
       <div className="container hero">
         <div className="hero__copy" style={{ alignSelf: 'center' }}>
-
           <div className="hero__eyebrow">
             <span className="dot" aria-hidden="true" />
             Open for collaboration
@@ -97,8 +92,7 @@ export default function Hero() {
             </a>
           </div>
 
-          {/*
-          <div className="hero__meta">
+          {/* <div className="hero__meta">
             <div className="metaCard">
               <div className="metaCard__k">Focus</div>
               <div className="metaCard__v">React • Node • Laravel</div>
@@ -107,8 +101,7 @@ export default function Hero() {
               <div className="metaCard__k">Approach</div>
               <div className="metaCard__v">Clean UI, Clean Code</div>
             </div>
-          </div>
-          */}
+          </div> */}
         </div>
 
         <div className="hero__media" aria-hidden="true">
@@ -118,9 +111,7 @@ export default function Hero() {
               icons={orbitIcons}
             />
         </div>
-
       </div>
     </SectionReveal>
   )
 }
-

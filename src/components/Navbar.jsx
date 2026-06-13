@@ -12,14 +12,11 @@ const NAV_ITEMS = [
   { id: 'contact', label: 'Contact' },
 ]
 
-
-
 function getNavOffsetPx() {
-  // match CSS: .navbar top:20px and height: var(--navH)
-  const navTop = 20
-  const navH = 76
-  // extra padding to prevent tiny overlaps due to subpixel rendering
-  return navTop + navH + 8
+  // match CSS: .navbar top:20px (12px on mobile) and height
+  const navTop = window.innerWidth <= 760 ? 12 : 20;
+  const navH = window.innerWidth <= 760 ? 56 : 60;
+  return navTop + navH + 8;
 }
 
 function scrollToId(id) {
@@ -31,8 +28,6 @@ function scrollToId(id) {
 
   window.scrollTo({ top: Math.max(0, top - offset), behavior: 'smooth' })
 }
-
-
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -99,7 +94,6 @@ export default function Navbar() {
     }
   }, [])
 
-
   useEffect(() => {
     if (!open) return
     const onKey = (e) => {
@@ -112,21 +106,18 @@ export default function Navbar() {
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner">
-        <button
-          type="button"
+        <button type="button"
           className="navbar__brand"
           onClick={() => scrollToId('home')}
           aria-label="Go to top"
         >
           <img className="navbar__avatar" src="/avatar.png" alt="" aria-hidden="true" />
-
           {/* <span className="navbar__name">Ryan</span> */}
         </button>
 
         <nav className="navbar__nav" aria-label="Main navigation">
           {NAV_ITEMS.map((item) => (
-            <button
-              key={item.id}
+            <button key={item.id}
               type="button"
               className={`navbar__link ${activeId === item.id ? 'navbar__link--active' : ''}`}
               onClick={() => {
@@ -136,7 +127,6 @@ export default function Navbar() {
             >
               {item.label}
             </button>
-
 
           ))}
         </nav>
@@ -155,15 +145,13 @@ export default function Navbar() {
             {open ? <FiX /> : <FiMenu />}
           </button>
         </div>
-
       </div>
 
-      <div className={`mobileMenu ${open ? 'mobileMenu--open' : ''}`}>
-        <div className="mobileMenu__panel">
+      <div className={`mobileMenu ${open ? 'mobileMenu--open' : ''}`} onClick={() => setOpen(false)}>
+        <div className="mobileMenu__panel" onClick={(e) => e.stopPropagation()}>
           <nav className="mobileMenu__nav" aria-label="Mobile navigation">
             {NAV_ITEMS.map((item) => (
-              <button
-                key={item.id}
+              <button key={item.id}
                 type="button"
                 className="mobileMenu__link"
                 onClick={() => {
@@ -177,20 +165,19 @@ export default function Navbar() {
           </nav>
 
           <div className="mobileMenu__cta">
-            <a className="navbar__talk navbar__talk--mobile" href="mailto:hello@example.com">
+            <a className="navbar__talk navbar__talk--mobile" href="mailto:ryanhillfree@gmail.com">
               Let's Talk
             </a>
-            <div className="mobileMenu__social">
+            {/* <div className="mobileMenu__social">
               {socials.map(({ label, href, Icon }) => (
                 <a key={label} className="iconBtn" href={href} aria-label={label}>
                   <Icon />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
     </header>
   )
 }
-
