@@ -118,7 +118,8 @@ export default function Navbar() {
           onClick={() => scrollToId('home')}
           aria-label="Go to top"
         >
-          <span className="navbar__avatar" aria-hidden="true" />
+          <img className="navbar__avatar" src="/avatar.png" alt="" aria-hidden="true" />
+
           {/* <span className="navbar__name">Ryan</span> */}
         </button>
 

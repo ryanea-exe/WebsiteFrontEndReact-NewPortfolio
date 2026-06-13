@@ -1,5 +1,7 @@
-- [ ] Rapikan section skills (tanpa mengubah bagian lain) 
-  - [ ] Samakan lebar card/kotak Tools dan Skills agar grid panel tidak berubah karena konten Tools
-  - [ ] Samakan hover/active icon pada card Tools supaya rapi dan tidak terpotong seperti Skills
-  - [ ] Update styling yang relevan di src/App.css (bagian Skills) 
-  - [ ] Jalankan dev/build untuk verifikasi
+# TODO
+
+- [ ] Ganti sumber gambar avatar di Navbar menjadi `public/avatar.png`
+- [ ] Ganti gambar profil di Hero menjadi `public/avatar.png`
+- [ ] Ganti avatar di Footer menjadi `public/avatar.png`
+- [ ] Verifikasi build/lint tidak error
+

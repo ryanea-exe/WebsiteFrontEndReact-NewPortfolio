@@ -36,8 +36,9 @@ export default function Footer() {
         <div className="flex flex-col items-center text-center">
           {/* profile avatar like navbar/header */}
           <div className="mt-6 flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-[rgba(255,255,255,0.04)] shadow-[0_0_0_1px_rgba(255,255,255,0.06)]">
-            <span className="text-sm font-semibold text-white/90">RY</span>
+<img src="/avatar.png" alt="" className="h-12 w-12 rounded-full object-cover" style={{ border: 'none' }} />
           </div>
+
 
           {/* Footer navigation (1st row) */}
           <nav
