@@ -1,13 +1,16 @@
 import { useMemo } from 'react'
 
-export default function HeroOrbit({image, icons = [], }) {
+export default function HeroOrbit({
+  image,
+  icons = [],
+}) {
   const outerIcons = useMemo(() => icons.slice(0, 6), [icons])
   const innerIcons = useMemo(() => icons.slice(6, 11), [icons])
 
   return (
     <div className="relative flex items-center justify-center w-full h-full">
-      {/* Orbit luar - ukuran responsif */}
-      <div className="absolute w-[340px] h-[340px] sm:w-[400px] sm:h-[400px] md:w-[480px] md:h-[480px] rounded-full border border-slate-300/20 dark:border-slate-700 animate-spin-slow">
+      {/* Orbit luar */}
+      <div className="absolute w-[340px] h-[340px] sm:w-[400px] sm:h-[400px] md:w-[480px] md:h-[480px] rounded-full border border-slate-300/40 dark:border-slate-700 animate-spin-slow">
         {outerIcons.map(({ Icon }, index) => {
           const angle = (360 / outerIcons.length) * index
           const radius = typeof window !== 'undefined' && window.innerWidth < 480 ? 170 
@@ -37,17 +40,19 @@ export default function HeroOrbit({image, icons = [], }) {
                     bg-white
                     dark:bg-slate-900
                     shadow-lg
+                    border border-slate-200
+                    dark:border-slate-700
                 "
-              >
-                <Icon className="text-xl sm:text-2xl md:text-3xl" />
+                >
+                <Icon className="text-xl sm:text-2xl md:text-3xl text-slate-700 dark:text-slate-300" />
               </div>
             </div>
           )
         })}
       </div>
 
-      {/* Orbit dalam - ukuran responsif */}
-      <div className="absolute w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] md:w-[310px] md:h-[310px] rounded-full border border-slate-300/20 dark:border-slate-700 animate-spin-reverse">
+      {/* Orbit dalam */}
+      <div className="absolute w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] md:w-[310px] md:h-[310px] rounded-full border border-slate-300/40 dark:border-slate-700 animate-spin-reverse">
         {innerIcons.map(({ Icon }, index) => {
           const angle = (360 / innerIcons.length) * index
           const radius = typeof window !== 'undefined' && window.innerWidth < 480 ? 110 
@@ -77,16 +82,18 @@ export default function HeroOrbit({image, icons = [], }) {
                     bg-white
                     dark:bg-slate-900
                     shadow-md
+                    border border-slate-200
+                    dark:border-slate-700
                 "
                 >
-                <Icon className="text-lg sm:text-xl md:text-2xl" />
+                <Icon className="text-lg sm:text-xl md:text-2xl text-slate-700 dark:text-slate-300" />
               </div>
             </div>
           )
         })}
       </div>
 
-      {/* FOTO PROFIL - ukuran responsif */}
+      {/* FOTO PROFIL */}
       <div className="relative z-20">
         <img src={image}
           alt="Profile"
@@ -97,6 +104,7 @@ export default function HeroOrbit({image, icons = [], }) {
             lg:w-48 lg:h-48
             object-cover
             rounded-full
+            ring-2 ring-purple-500/30
             shadow-xl
           "
         />
