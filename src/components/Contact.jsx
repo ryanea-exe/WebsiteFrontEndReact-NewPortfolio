@@ -57,7 +57,7 @@ export default function Contact() {
                   <FaLinkedinIn />
                 </span>
                 <a className="contactInfoLink" href="https://www.linkedin.com/in/ryan-erlangga-ardiansyah/" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
+                  Ryan Erlangga Ardiansyah
                 </a>
               </div>
 
@@ -66,7 +66,7 @@ export default function Contact() {
                   <FaGithub />
                 </span>
                 <a className="contactInfoLink" href="https://github.com/ryanea-exe" target="_blank" rel="noopener noreferrer">
-                  Github
+                  ryanea-exe
                 </a>
               </div>
 
@@ -75,7 +75,7 @@ export default function Contact() {
                   <FaInstagram />
                 </span>
                 <a className="contactInfoLink" href="https://www.instagram.com/ryanea__/" target="_blank" rel="noopener noreferrer">
-                  Instagram
+                  ryanea__
                 </a>
               </div>
 

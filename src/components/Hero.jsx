@@ -52,17 +52,17 @@ import {
 import profileImage from '/avatar.png'
 
 const orbitIcons = [
-  { Icon: FaLaravel },
+  { Icon: FaPhp },
   { Icon: FaReact },
   { Icon: FaJs },
-  { Icon: SiNextdotjs },
-  { Icon: SiTailwindcss },
   { Icon: FaVuejs },
-  { Icon: FaPhp },
+  { Icon: SiTailwindcss },
+  { Icon: FaHtml5 },
+  { Icon: FaLaravel },
   { Icon: SiMysql },
   { Icon: SiPostgresql },
   { Icon: SiNginx },
-  { Icon: FaGithub },
+  { Icon: FaGit },
 ]
 
 

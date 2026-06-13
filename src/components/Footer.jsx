@@ -100,7 +100,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="mt-6 text-sm text-gray-400">
-            © 2026 Ryan. All Rights Reserved.
+            © 2026 RyanEA. All Rights Reserved.
           </div>
         </div>
       </div>

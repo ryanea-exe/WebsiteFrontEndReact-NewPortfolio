@@ -1,5 +1,5 @@
 import SectionReveal from './SectionReveal'
-import profileImg from '../assets/profile/profile-placeholder.png'
+import profileImg from '/profile.png'
 import { FaDownload } from 'react-icons/fa'
 
 export default function About() {
@@ -23,7 +23,6 @@ export default function About() {
               <img className="about__photo" src={profileImg} alt="" />
               <div className="about__photoGlow" />
             </div>
-
           </div>
 
           <div className="about__right">
