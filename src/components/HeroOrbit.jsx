@@ -104,8 +104,6 @@ export default function HeroOrbit({
             lg:w-48 lg:h-48
             object-cover
             rounded-full
-            ring-2 ring-purple-500/30
-            shadow-xl
           "
         />
       </div>
