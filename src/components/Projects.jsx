@@ -70,23 +70,30 @@ const PROJECTS = [
 
 function Modal({ open, onClose, project }) {
   const el = document.getElementById('root')
-  if (!open || !project || !el) return null
+  if (!project || !el) return null
+
+  // Render tetap ada untuk animasi tutup.
+  // Saat open=false, class diturunkan oleh parent (modalVisible).
+  const overlayClass = open ? 'modalOverlay modalOverlay--open' : 'modalOverlay'
+  const modalClass = open ? 'modal modal--open' : 'modal'
 
   return createPortal(
     <div
-      className="modalOverlay"
+      className={overlayClass}
       role="dialog"
       aria-modal="true"
       aria-label={`Project details: ${project.title}`}
       onMouseDown={(e) => {
+        if (!open) return
         if (e.target === e.currentTarget) onClose()
       }}
       onKeyDown={(e) => {
+        if (!open) return
         if (e.key === 'Escape') onClose()
       }}
       tabIndex={-1}
     >
-      <div className="modal">
+      <div className={modalClass}>
         <div className="modal__header">
           <div>
             <div className="modal__kicker">Project Details</div>
@@ -121,7 +128,7 @@ function Modal({ open, onClose, project }) {
           </div>
 
           <div className="modal__right">
-            <div className="modal__poster" aria-hidden="true" />
+            <img className="modal__poster" src={project.image} alt="" />
             <div className="modal__section">
               <h4 className="modal__h">Tech Stack</h4>
               <div className="chips chips--dense">
@@ -134,10 +141,24 @@ function Modal({ open, onClose, project }) {
             </div>
 
             <div className="modal__links">
-              <a className="btn btn--primary" href="#" onClick={(e) => e.preventDefault()}>
+              <a
+                className="btn btn--primary"
+                href={project.liveDemoUrl || '#'}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => {
+                  if (!project.liveDemoUrl) e.preventDefault()
+                }}
+              >
                 <FiExternalLink /> Live Demo
               </a>
-              <a className="btn btn--secondary" href="https://github.com/ryanea-exe?tab=repositories" target="_blank" rel="noreferrer">
+
+              <a
+                className="btn btn--secondary"
+                href={project.githubUrl || 'https://github.com/'}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FiGithub /> GitHub
               </a>
             </div>
@@ -151,8 +172,22 @@ function Modal({ open, onClose, project }) {
 
 export default function Projects() {
   const [activeId, setActiveId] = useState(null)
+  const [modalVisible, setModalVisible] = useState(false)
 
   const active = useMemo(() => PROJECTS.find((p) => p.id === activeId) ?? null, [activeId])
+
+  const openModal = (id) => {
+    setActiveId(id)
+    // jalankan animasi buka setelah state render
+    requestAnimationFrame(() => setModalVisible(true))
+  }
+
+  const closeModal = () => {
+    setModalVisible(false)
+    // tunggu animasi tutup selesai
+    setTimeout(() => setActiveId(null), 220)
+  }
+
 
   return (
     <SectionReveal id="projects" className="section">
@@ -194,7 +229,7 @@ export default function Projects() {
                 <button
                   type="button"
                   className="btn btn--primary btn--full"
-                  onClick={() => setActiveId(p.id)}
+                  onClick={() => openModal(p.id)}
                 >
                   <FiMoreHorizontal /> Read More
                 </button>
@@ -203,7 +238,7 @@ export default function Projects() {
           ))}
         </div>
 
-        <Modal open={!!activeId} onClose={() => setActiveId(null)} project={active} />
+        <Modal open={modalVisible && !!activeId} onClose={closeModal} project={active} />
       </div>
     </SectionReveal>
   )

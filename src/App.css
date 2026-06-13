@@ -642,7 +642,7 @@
 }
 
 .projectCard__media {
-  height: 140px;
+  height: 200px;
   position: relative;
   overflow: hidden;
 }
@@ -696,11 +696,21 @@
 .modalOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.52);
+  background: rgba(0, 0, 0, 0);
   display: grid;
   place-items: center;
   padding: 18px;
   z-index: 100;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease, background 220ms ease;
+}
+
+.modalOverlay--open {
+  opacity: 1;
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.52);
 }
 
 .modal {
@@ -712,7 +722,17 @@
   background: rgba(17, 18, 24, 0.72);
   backdrop-filter: blur(16px);
   box-shadow: 0 30px 100px rgba(0, 0, 0, 0.4);
+
+  transform: translateY(10px) scale(0.98);
+  opacity: 0;
+  transition: transform 220ms ease, opacity 220ms ease;
 }
+
+.modal--open {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
 
 .modal__header {
   padding: 18px 18px 0;
@@ -762,7 +782,7 @@
 }
 
 .modal__poster {
-  height: 120px;
+  height: 210px;
   border-radius: 18px;
   border: 1px solid var(--border);
   background:
