@@ -1,49 +1,92 @@
 import SectionReveal from './SectionReveal'
-import { FaTools, FaCode } from 'react-icons/fa'
+
 import {
-  SiGithub,
-  SiGit,
-  SiFigma,
-  SiPostman,
-  SiDocker,
+  FaTools, 
+  FaCode,
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaPhp,
+  FaJava,
+  FaPython,
+  FaReact,
+  FaVuejs,
+  FaBootstrap,
+  FaLaravel,
+  FaFlask,
+  FaWordpress,
+  FaGit,
+  FaGithub,
+  FaFigma,
+} from 'react-icons/fa'
+
+import {
+  SiLaravel,
+  SiPython,
+  SiTypescript,
+  SiKotlin,
+  SiTailwindcss,
+  SiCodeigniter,
+  SiFilament,
   SiMysql,
   SiPostgresql,
-  SiHtml5,
-  SiCss,
-  SiJavascript,
-  SiTypescript,
-  SiPhp,
-  SiLaravel,
-  SiReact,
-  SiVuedotjs,
-  SiTailwindcss,
-  SiPython,
+  SiMariadb,
+  SiSqlite,
+  SiNginx,
+  SiApache,
+  SiMamp,
+  SiLaragon,
+  SiPhpmyadmin,
+  SiVercel,
+  SiCanva,
+  SiArduino,
 } from 'react-icons/si'
+
+import {
+  VscVscode,
+  VscLayoutSidebarLeft,
+} from 'react-icons/vsc'
 
 import { useMemo, useState } from 'react'
 
 const TOOLS = [
-  { name: 'VS Code', Icon: SiGit },
-  { name: 'Git', Icon: SiGit },
-  { name: 'GitHub', Icon: SiGithub },
-  { name: 'Figma', Icon: SiFigma },
-  { name: 'Postman', Icon: SiPostman },
-  { name: 'Docker', Icon: SiDocker },
   { name: 'MySQL', Icon: SiMysql },
   { name: 'PostgreSQL', Icon: SiPostgresql },
+  { name: 'MariaDB', Icon: SiMariadb },
+  { name: 'SQLite', Icon: SiSqlite },
+  { name: 'Nginx', Icon: SiNginx },
+  { name: 'Apache', Icon: SiApache },
+  { name: 'VS Code', Icon: VscVscode },
+  { name: 'GitHub', Icon: FaGithub },
+  { name: 'MAMP', Icon: SiMamp },
+  { name: 'Laragon', Icon: SiLaragon },
+  { name: 'phpMyAdmin', Icon: SiPhpmyadmin },
+  { name: 'Vercel', Icon: SiVercel },
+  { name: 'Figma', Icon: FaFigma },
+  { name: 'Canva', Icon: SiCanva },
+  { name: 'WireFrame', Icon: VscLayoutSidebarLeft },
+  { name: 'Arduino', Icon: SiArduino },
 ]
 
 const SKILLS = [
-  { name: 'HTML', Icon: SiHtml5 },
-  { name: 'CSS', Icon: SiCss },
-  { name: 'JavaScript', Icon: SiJavascript },
+  { name: 'HTML', Icon: FaHtml5 },
+  { name: 'CSS3', Icon: FaCss3 },
+  { name: 'JavaScript', Icon: FaJs },
+  { name: 'PHP', Icon: FaPhp },
   { name: 'TypeScript', Icon: SiTypescript },
-  { name: 'PHP', Icon: SiPhp },
-  { name: 'Laravel', Icon: SiLaravel },
-  { name: 'React JS', Icon: SiReact },
-  { name: 'Vue JS', Icon: SiVuedotjs },
+  { name: 'Java', Icon: FaJava },
+  { name: 'Python', Icon: FaPython },
+  { name: 'Kotlin', Icon: SiKotlin },
+  { name: 'React', Icon: FaReact },
+  { name: 'Vue JS', Icon: FaVuejs },
   { name: 'Tailwind CSS', Icon: SiTailwindcss },
-  { name: 'Python', Icon: SiPython },
+  { name: 'Bootstrap', Icon: FaBootstrap },
+  { name: 'Laravel', Icon: FaLaravel },
+  { name: 'CodeIgniter', Icon: SiCodeigniter },
+  { name: 'Flask', Icon: FaFlask },
+  { name: 'Filament', Icon: SiFilament },
+  { name: 'WordPress', Icon: FaWordpress },
+  { name: 'Git', Icon: FaGit },
 ]
 
 export default function Skills() {
@@ -57,7 +100,7 @@ export default function Skills() {
       <div className="container">
         <header className="sectionHeader">
           <h2 className="sectionHeader__title">Skills & Tools</h2>
-          <p className="sectionHeader__desc">Tools untuk workflow dan skill yang saya gunakan untuk membangun produk.</p>
+          <p className="sectionHeader__desc">Tools for workflow and skills I use to build products (TechStack).</p>
         </header>
 
         <div className="skillsGrid">
