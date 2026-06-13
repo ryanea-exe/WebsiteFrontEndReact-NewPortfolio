@@ -3,6 +3,68 @@ import { FaDownload } from 'react-icons/fa'
 import { MdOutlineEmail } from 'react-icons/md'
 import SectionReveal from './SectionReveal'
 
+import HeroOrbit from './HeroOrbit'
+
+import {
+  FaTools, 
+  FaCode,
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaPhp,
+  FaJava,
+  FaPython,
+  FaReact,
+  FaVuejs,
+  FaBootstrap,
+  FaLaravel,
+  FaFlask,
+  FaWordpress,
+  FaGit,
+  FaGithub,
+  FaFigma,
+  FaDatabase,
+} from 'react-icons/fa'
+
+import {
+  SiLaravel,
+  SiNextdotjs,
+  SiPython,
+  SiTypescript,
+  SiKotlin,
+  SiTailwindcss,
+  SiCodeigniter,
+  SiFilament,
+  SiMysql,
+  SiPostgresql,
+  SiMariadb,
+  SiSqlite,
+  SiNginx,
+  SiApache,
+  SiMamp,
+  SiLaragon,
+  SiPhpmyadmin,
+  SiVercel,
+  SiCanva,
+  SiArduino,
+} from 'react-icons/si'
+
+import profileImage from '/avatar.png'
+
+const orbitIcons = [
+  { Icon: FaLaravel },
+  { Icon: FaReact },
+  { Icon: FaJs },
+  { Icon: SiNextdotjs },
+  { Icon: SiTailwindcss },
+  { Icon: FaVuejs },
+  { Icon: FaPhp },
+  { Icon: SiMysql },
+  { Icon: SiPostgresql },
+  { Icon: SiNginx },
+  { Icon: FaGithub },
+]
+
 
 export default function Hero() {
   const downloadHref = useMemo(() => '#', [])
@@ -51,11 +113,10 @@ export default function Hero() {
 
         <div className="hero__media" aria-hidden="true">
           <div className="hero__frame" />
-          <div className="hero__profileOrbit" aria-hidden="true">
-<img className="hero__img hero__img--profile" src="/avatar.png" alt="" style={{ border: 'none' }} />
-            <div className="hero__orbitRing" />
-            <div className="hero__orbitGlow" />
-          </div>
+            <HeroOrbit
+              image={profileImage}
+              icons={orbitIcons}
+            />
         </div>
 
       </div>

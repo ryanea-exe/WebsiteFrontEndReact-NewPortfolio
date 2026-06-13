@@ -489,7 +489,6 @@
   border-radius: 26px;
   border: none;
   background: transparent;
-  overflow: hidden;
 }
 
 .hero__frame {
@@ -497,9 +496,9 @@
   inset: 16px;
   border-radius: 22px;
   /* border: 1px solid var(--border); */
-  background:
+  /* background:
     radial-gradient(500px circle at 20% 20%, rgba(170, 59, 255, 0.25), transparent 40%),
-    radial-gradient(500px circle at 90% 10%, rgba(59, 130, 246, 0.25), transparent 45%);
+    radial-gradient(500px circle at 90% 10%, rgba(59, 130, 246, 0.25), transparent 45%); */
 }
 
 
@@ -1138,11 +1137,6 @@
 
   .footer__navRow {
     margin-top: 0;
-  }
-
-
-  .hero__media {
-    height: 340px;
   }
 
   .skillsGrid {
