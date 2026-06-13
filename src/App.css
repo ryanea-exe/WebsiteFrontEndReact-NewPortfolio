@@ -809,8 +809,9 @@
 .iconRow {
   display: flex;
   gap: 12px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  /* Biar panel Tools & Skills punya lebar yang sama */
+  flex-wrap: wrap;
+  overflow-x: visible;
   padding-bottom: 6px;
 }
 
@@ -848,13 +849,16 @@
   font-weight: 750;
 }
 
-.skillIcon:hover {
+/* Biar ekspansi label saat hover/active tidak terasa “terpotong” */
+.skillIcon:hover,
+.skillIcon--active {
   transform: translateY(-3px);
   border-color: rgba(170, 59, 255, 0.35);
   background: rgba(255, 255, 255, 0.08);
 }
 
-.skillIcon:hover svg {
+.skillIcon:hover svg,
+.skillIcon--active svg {
   transform: scale(1.12);
 }
 

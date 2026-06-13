@@ -18,6 +18,7 @@ import {
   FaGit,
   FaGithub,
   FaFigma,
+  FaDatabase,
 } from 'react-icons/fa'
 
 import {
@@ -61,6 +62,7 @@ const TOOLS = [
   { name: 'MAMP', Icon: SiMamp },
   { name: 'Laragon', Icon: SiLaragon },
   { name: 'phpMyAdmin', Icon: SiPhpmyadmin },
+  { name: 'DB Engine', Icon: FaDatabase },
   { name: 'Vercel', Icon: SiVercel },
   { name: 'Figma', Icon: FaFigma },
   { name: 'Canva', Icon: SiCanva },
