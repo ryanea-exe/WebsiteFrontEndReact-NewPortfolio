@@ -86,8 +86,7 @@ function Modal({ open, onClose, project }) {
   const modalClass = open ? 'modal modal--open' : 'modal'
 
   return createPortal(
-    <div
-      className={overlayClass}
+    <div className={overlayClass}
       role="dialog"
       aria-modal="true"
       aria-label={`Project details: ${project.title}`}
@@ -148,9 +147,8 @@ function Modal({ open, onClose, project }) {
               </div>
             </div>
 
-              <div className="modal__links">
-              <a
-                className="btn btn--primary"
+            <div className="modal__links">
+              <a className="btn btn--secondary"
                 href={project.liveDemoUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -162,9 +160,7 @@ function Modal({ open, onClose, project }) {
               >
                 <FiExternalLink /> Live Demo
               </a>
-
-              <a
-                className="btn btn--secondary"
+              <a className="btn btn--secondary"
                 href={project.githubUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -203,7 +199,6 @@ export default function Projects() {
     setTimeout(() => setActiveId(null), 220)
   }
 
-
   return (
     <SectionReveal id="projects" className="section">
       <div className="container">
@@ -220,7 +215,6 @@ export default function Projects() {
                 <img className="projectCard__img" src={p.image} alt="" />
               </div>
 
-
               <div className="projectCard__body">
                 <h3 className="projectCard__title">{p.title}</h3>
                 <p className="projectCard__summary">{p.summary}</p>
@@ -232,9 +226,8 @@ export default function Projects() {
                   ))}
                 </div>
 
-              <div className="projectCard__actions">
-                  <a
-                    className="btn btn--ghost"
+                <div className="projectCard__actions">
+                  <a className="btn btn--ghost"
                     href={p.liveDemoUrl}
                     target="_blank"
                     rel="noreferrer"
@@ -246,9 +239,7 @@ export default function Projects() {
                   >
                     <FiExternalLink /> Live Demo
                   </a>
-
-                  <a
-                    className="btn btn--ghost"
+                  <a className="btn btn--ghost"
                     href={p.githubUrl}
                     target="_blank"
                     rel="noreferrer"
@@ -262,8 +253,7 @@ export default function Projects() {
                   </a>
                 </div>
 
-                <button
-                  type="button"
+                <button type="button"
                   className="btn btn--primary btn--full"
                   onClick={() => openModal(p.id)}
                 >
@@ -279,4 +269,3 @@ export default function Projects() {
     </SectionReveal>
   )
 }
-

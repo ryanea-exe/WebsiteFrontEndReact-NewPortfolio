@@ -136,6 +136,7 @@
 
 .navbar__talk:hover {
   transform: translateY(-1px);
+  background: linear-gradient(135deg, rgba(170, 59, 255, 0.95), rgba(65, 68, 255, 0.95));
   filter: brightness(1.05);
 }
 
@@ -260,6 +261,7 @@
 }
 
 .iconBtn--danger:hover {
+  cursor: pointer;
   background: rgba(220, 38, 38, 0.12);
 }
 
@@ -428,13 +430,16 @@
 }
 
 .btn--primary {
+  padding: 8px 16px;
   color: #fff;
   background: linear-gradient(135deg, rgba(170, 59, 255, 0.95), rgba(99, 102, 241, 0.95));
   box-shadow: 0 16px 40px rgba(170, 59, 255, 0.22);
 }
 
 .btn--primary:hover {
+  cursor: pointer;
   transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(170, 59, 255, 0.95), rgba(65, 68, 255, 0.95));
   box-shadow: 0 18px 50px rgba(170, 59, 255, 0.28);
 }
 
@@ -484,9 +489,15 @@
 }
 
 .btn--ghost {
+  padding: 8px 16px;
   color: var(--text-h);
   background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(229, 228, 231, 0.16);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+:root[data-theme='dark'] .btn--ghost {
+  border: 1px solid rgba(229, 228, 231, 0.14);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .btn--ghost:hover {
@@ -752,8 +763,8 @@
   margin-top: 10px;
 }
 
-.chip {
-  padding: 8px 10px;
+.chip, .chip--soft {
+  padding: 4px 8px;
   border-radius: 999px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   background: rgba(0, 0, 0, 0.04);
@@ -762,13 +773,9 @@
   color: var(--text);
 }
 
-:root[data-theme='dark'] .chip {
+:root[data-theme='dark'] .chip, :root[data-theme='dark'] .chip--soft {
   border: 1px solid rgba(229, 228, 231, 0.14);
   background: rgba(255, 255, 255, 0.06);
-}
-
-.chip--soft {
-  background: rgba(255, 255, 255, 0.04);
 }
 
 /* Projects */
@@ -963,6 +970,7 @@
 
 .panelHeader {
   display: inline-flex;
+  font-size: 14px;
   gap: 10px;
   align-items: center;
   font-weight: 900;
@@ -1264,6 +1272,7 @@
   }
   /* Perbaiki teks */
   .hero__eyebrow {
+    font-weight: 400;
     font-size: 13px;
     padding: 6px 10px;
     gap: 8px;
@@ -1360,15 +1369,33 @@
     font-size: 13px;
   }
 
+  .skillIcon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .skillIcon__label {
+    font-size: 12px;
+  }
+
   .contactHint {
-    font-size: 14px;
+    font-size: 13px;
+  }
+  .contactInfoRow {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+  .field__label {
+    font-size: 13px;
+  }
+  .field__input, .contactForm__note {
+    font-size: 12px;
   }
 
   .chips {
     gap: 6px;
     margin-top: 10px;
   }
-  .chip {
+  .chip, .chip--soft {
     padding: 6px 8px;
     font-size: 11px;
   }

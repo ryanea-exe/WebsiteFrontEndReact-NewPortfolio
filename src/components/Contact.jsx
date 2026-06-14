@@ -1,15 +1,13 @@
 import { useMemo, useState } from 'react'
 import SectionReveal from './SectionReveal'
+import { MdEmail } from 'react-icons/md'
+import '../Contact.css'
 import {
   FaGithub,
   FaInstagram,
   FaLinkedinIn,
   FaMapMarkerAlt,
 } from 'react-icons/fa'
-import { MdEmail } from 'react-icons/md'
-
-import '../Contact.css'
-
 
 export default function Contact() {
   const downloadHref = useMemo(() => '#', [])
@@ -51,7 +49,6 @@ export default function Contact() {
                   ryanhillfree23@gmail.com
                 </a>
               </div>
-
               <div className="contactInfoRow">
                 <span className="contactInfoIcon" aria-hidden="true">
                   <FaLinkedinIn />
@@ -60,7 +57,6 @@ export default function Contact() {
                   Ryan Erlangga Ardiansyah
                 </a>
               </div>
-
               <div className="contactInfoRow">
                 <span className="contactInfoIcon" aria-hidden="true">
                   <FaGithub />
@@ -69,7 +65,6 @@ export default function Contact() {
                   ryanea-exe
                 </a>
               </div>
-
               <div className="contactInfoRow">
                 <span className="contactInfoIcon" aria-hidden="true">
                   <FaInstagram />
@@ -78,7 +73,6 @@ export default function Contact() {
                   ryanea__
                 </a>
               </div>
-
               <div className="contactInfoRow">
                 <span className="contactInfoIcon" aria-hidden="true">
                   <FaMapMarkerAlt />
@@ -90,7 +84,6 @@ export default function Contact() {
             <div className="contactHint">
               Prefer email? I typically respond within 1–2 business days.
             </div>
-
             {/* <a className="btn btn--ghost contactDownload" href={downloadHref}>
               View Portfolio PDF
             </a> */}
@@ -99,8 +92,7 @@ export default function Contact() {
           <form className="contactForm" onSubmit={handleSubmit}>
             <label className="field">
               <span className="field__label">Full Name</span>
-              <input
-                className="field__input"
+              <input className="field__input"
                 name="fullName"
                 value={form.fullName}
                 onChange={handleChange}
@@ -108,11 +100,9 @@ export default function Contact() {
                 required
               />
             </label>
-
             <label className="field">
               <span className="field__label">Email Address</span>
-              <input
-                className="field__input"
+              <input className="field__input"
                 name="email"
                 type="email"
                 value={form.email}
@@ -121,11 +111,9 @@ export default function Contact() {
                 required
               />
             </label>
-
             <label className="field">
               <span className="field__label">Subject</span>
-              <input
-                className="field__input"
+              <input className="field__input"
                 name="subject"
                 value={form.subject}
                 onChange={handleChange}
@@ -133,11 +121,9 @@ export default function Contact() {
                 required
               />
             </label>
-
             <label className="field">
               <span className="field__label">Message</span>
-              <textarea
-                className="field__input field__textarea"
+              <textarea className="field__input field__textarea"
                 name="message"
                 value={form.message}
                 onChange={handleChange}
@@ -150,7 +136,6 @@ export default function Contact() {
             <button className="btn btn--primary contactForm__btn" type="submit">
               Send Message
             </button>
-
             <div className="contactForm__note">
               This is a dummy handler for now.
             </div>
@@ -160,4 +145,3 @@ export default function Contact() {
     </SectionReveal>
   )
 }
-
