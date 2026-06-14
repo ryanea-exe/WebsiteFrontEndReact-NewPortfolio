@@ -3,7 +3,6 @@ import profileImg from '/profile.png'
 import { FaDownload } from 'react-icons/fa'
 
 export default function About() {
-
   return (
     <SectionReveal id="about" className="section">
       <div className="container about">
@@ -24,30 +23,25 @@ export default function About() {
               <div className="about__photoGlow" />
             </div>
           </div>
-
           <div className="about__right">
             <div className="about__cards">
               <div className="aboutCard">
                 <div className="aboutCard__h">Education</div>
                 <div className="aboutCard__p">Informatics Engineering graduate with a strong foundation in software development and information technology.</div>
               </div>
-
               <div className="aboutCard">
                 <div className="aboutCard__h">Experience</div>
                 <div className="aboutCard__p">Experienced in developing web applications, managing databases, and supporting IT operations.</div>
               </div>
-
               <div className="aboutCard">
                 <div className="aboutCard__h">Career Focus</div>
                 <div className="aboutCard__p">Focused on Full-Stack Web Development, Software Engineering, and Backend Development.</div>
               </div>
-
               <div className="aboutCard">
                 <div className="aboutCard__h">Interests</div>
                 <div className="aboutCard__p">Passionate about building scalable digital solutions and exploring emerging technologies.</div>
               </div>
             </div>
-
             <div className="stats" aria-label="About stats">
               <div className="stat">
                 <div className="stat__v">2+ Years</div>
@@ -62,7 +56,6 @@ export default function About() {
                 <div className="stat__k">Core Stack</div>
               </div>
             </div>
-
             {/* <div className="about__actions">
               <a className="btn btn--primary" href="#" download>
                 <FaDownload /> Download Resume
@@ -74,5 +67,3 @@ export default function About() {
     </SectionReveal>
   )
 }
-
-

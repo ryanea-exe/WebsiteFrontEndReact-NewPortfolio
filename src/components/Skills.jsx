@@ -116,8 +116,7 @@ export default function Skills() {
 
             <div className="iconRow">
               {tools.map(({ name, Icon }) => (
-                <button
-                  key={name}
+                <button key={name}
                   type="button"
                   className={`skillIcon ${hovered === name ? 'skillIcon--active' : ''}`}
                   onMouseEnter={() => setHovered(name)}
@@ -138,8 +137,7 @@ export default function Skills() {
 
             <div className="iconRow iconRow--wrap">
               {skills.map(({ name, Icon }) => (
-                <button
-                  key={name}
+                <button key={name}
                   type="button"
                   className={`skillIcon ${hovered === name ? 'skillIcon--active' : ''}`}
                   onMouseEnter={() => setHovered(name)}
@@ -156,4 +154,3 @@ export default function Skills() {
     </SectionReveal>
   )
 }
-

@@ -11,8 +11,7 @@ export default function ThemeToggle() {
   const isDark = theme === 'dark'
 
   return (
-    <button
-      type="button"
+    <button type="button"
       className="themeToggle"
       onClick={toggleTheme}
       aria-label={`Switch to ${isDark ? 'Light Mode' : 'Dark Mode'}`}
@@ -29,5 +28,3 @@ export default function ThemeToggle() {
     </button>
   )
 }
-
-
