@@ -63,8 +63,30 @@ const orbitIcons = [
   { Icon: FaGit },
 ]
 
+function getNavOffsetPx() {
+  const navTop = window.innerWidth <= 760 ? 12 : 20
+  const navH = window.innerWidth <= 760 ? 56 : 60
+  return navTop + navH + 8
+}
+
+function scrollToId(id) {
+  const el = document.getElementById(id)
+  if (!el) return
+
+  const top = el.getBoundingClientRect().top + window.scrollY
+  const offset = getNavOffsetPx()
+
+  window.scrollTo({
+    top: Math.max(0, top - offset),
+    behavior: 'smooth',
+  })
+}
+
 export default function Hero() {
-  const downloadHref = useMemo(() => '#', [])
+  const downloadHref = useMemo(
+    () => 'https://drive.google.com/file/d/1zi3zYiaYhjyWZJRxohia3EnWVdLPGWyv/view',
+    []
+  )
 
   return (
     <SectionReveal id="home" className="section section--hero">
@@ -84,12 +106,19 @@ export default function Hero() {
           </p>
 
           <div className="hero__actions">
-            <a className="btn btn--primary" href={downloadHref} download>
+            <a className="btn btn--primary"
+              href={downloadHref}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaDownload /> Download CV
             </a>
-            <a className="btn btn--secondary" href="mailto:hello@example.com">
+            <button type="button"
+              className="btn btn--secondary"
+              onClick={() => scrollToId('contact')}
+            >
               <MdOutlineEmail /> Contact Me
-            </a>
+            </button>
           </div>
 
           {/* <div className="hero__meta">

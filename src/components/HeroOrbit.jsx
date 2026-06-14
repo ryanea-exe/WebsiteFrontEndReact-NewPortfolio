@@ -10,12 +10,12 @@ export default function HeroOrbit({
   return (
     <div className="relative flex items-center justify-center w-full h-full">
       {/* Orbit luar */}
-      <div className="absolute w-[340px] h-[340px] sm:w-[400px] sm:h-[400px] md:w-[480px] md:h-[480px] rounded-full border border-slate-300/40 dark:border-slate-700 animate-spin-slow">
+      <div className="absolute w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] md:w-[460px] md:h-[460px] rounded-full border border-slate-300/40 dark:border-slate-700 animate-spin-slow">
         {outerIcons.map(({ Icon }, index) => {
           const angle = (360 / outerIcons.length) * index
-          const radius = typeof window !== 'undefined' && window.innerWidth < 480 ? 170 
+          const radius = typeof window !== 'undefined' && window.innerWidth < 480 ? 150 
                       : typeof window !== 'undefined' && window.innerWidth < 640 ? 200 
-                      : 240
+                      : 230
 
           return (
             <div key={index}
@@ -52,12 +52,12 @@ export default function HeroOrbit({
       </div>
 
       {/* Orbit dalam */}
-      <div className="absolute w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] md:w-[310px] md:h-[310px] rounded-full border border-slate-300/40 dark:border-slate-700 animate-spin-reverse">
+      <div className="absolute w-[190px] h-[190px] sm:w-[260px] sm:h-[260px] md:w-[300px] md:h-[300px] rounded-full border border-slate-300/40 dark:border-slate-700 animate-spin-reverse">
         {innerIcons.map(({ Icon }, index) => {
           const angle = (360 / innerIcons.length) * index
-          const radius = typeof window !== 'undefined' && window.innerWidth < 480 ? 110 
+          const radius = typeof window !== 'undefined' && window.innerWidth < 480 ? 95 
                       : typeof window !== 'undefined' && window.innerWidth < 640 ? 130 
-                      : 155
+                      : 150
 
           return (
             <div key={index}

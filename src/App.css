@@ -103,12 +103,16 @@
 }
 
 .navbar__link:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.2);
   transform: translateY(-1px);
 }
 
+:root[data-theme='dark'] .navbar__link:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 .navbar__link--active {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(170, 59, 255, 0.35);
   color: var(--text-h);
   box-shadow: 0 10px 30px rgba(170, 59, 255, 0.12);
@@ -304,6 +308,15 @@
   transform: translateY(-2px);
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(170, 59, 255, 0.3);
+}
+
+.iconBtn--danger {
+  border: 0px;
+  background: #ffffff00;
+  font-weight: bolder;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
 }
 
 .iconBtn--danger:hover {
@@ -508,6 +521,7 @@
 }
 
 .btn--secondary:hover {
+  cursor: pointer;
   transform: translateY(-2px);
   background: rgba(0, 0, 0, 0.08);
   border-color: rgba(0, 0, 0, 0.25);
@@ -921,6 +935,10 @@
 .modalOverlay--open {
   opacity: 1;
   pointer-events: auto;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+:root[data-theme='dark'] .modalOverlay--open {
   background: rgba(0, 0, 0, 0.52);
 }
 
@@ -929,13 +947,19 @@
   max-height: 86svh;
   overflow: auto;
   border-radius: 22px;
-  border: 1px solid rgba(229, 228, 231, 0.18);
-  background: rgba(17, 18, 24, 0.72);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(16px);
-  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.15);
   transform: translateY(10px) scale(0.98);
   opacity: 0;
   transition: transform 220ms ease, opacity 220ms ease;
+}
+
+:root[data-theme='dark'] .modal {
+  background: rgba(17, 18, 24, 0.72);
+  border: 1px solid rgba(229, 228, 231, 0.18);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.4);
 }
 
 .modal--open {
@@ -955,11 +979,13 @@
   opacity: 0.9;
   font-weight: 800;
   font-size: 12px;
+  color: var(--text);
 }
 
 .modal__title {
   margin: 6px 0 0;
   font-size: 26px;
+  color: var(--text);
 }
 
 .modal__grid {
@@ -973,6 +999,7 @@
   margin: 0;
   opacity: 0.94;
   line-height: 1.7;
+  color: var(--text);
 }
 
 .modal__section {
@@ -981,6 +1008,7 @@
 
 .modal__h {
   margin: 0 0 8px;
+  color: var(--text-h);
 }
 
 .modal__ul {
@@ -988,11 +1016,20 @@
   padding-left: 18px;
   line-height: 1.7;
   opacity: 0.94;
+  color: var(--text);
 }
 
 .modal__poster {
   height: 210px;
   border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background:
+    radial-gradient(500px circle at 10% 10%, rgba(170, 59, 255, 0.2), transparent 40%),
+    radial-gradient(500px circle at 90% 10%, rgba(59, 130, 246, 0.2), transparent 45%),
+    rgba(0, 0, 0, 0.02);
+}
+
+:root[data-theme='dark'] .modal__poster {
   border: 1px solid var(--border);
   background:
     radial-gradient(500px circle at 10% 10%, rgba(170, 59, 255, 0.35), transparent 40%),
@@ -1415,6 +1452,61 @@
   .projectCard__summary {
     font-size: 13px;
   }
+  .modalOverlay {
+    padding: 12px;
+    align-items: flex-end; /* Mobile: muncul dari bawah */
+  }
+  .modal {
+    width: 100%;
+    max-height: 90svh;
+    border-radius: 22px 22px 0 0; /* Hanya atas yang rounded */
+    transform: translateY(20px) scale(1);
+    transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 220ms ease;
+  }
+  .modal--open {
+    transform: translateY(0) scale(1);
+  }
+  .modal__header {
+    padding: 16px 16px 0;
+  }
+  .modal__title {
+    font-size: 22px;
+  }
+  .modal__grid {
+    padding: 14px 16px 16px;
+    grid-template-columns: 1fr; /* Single column */
+    gap: 14px;
+  }
+  .modal__poster {
+    height: 180px;
+    order: -1; /* Gambar di atas */
+  }
+  .modal__right {
+    display: flex;
+    flex-direction: column;
+  }
+  .modal__links {
+    grid-template-columns: 1fr 1fr; /* Dua tombol sejajar */
+    gap: 8px;
+  }
+  .modal__links .btn {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+  .modal__summary {
+    font-size: 14px;
+  }
+  .modal__ul {
+    font-size: 13px;
+    padding-left: 16px;
+  }
+  .modal__h {
+    font-size: 15px;
+    margin: 0 0 6px;
+  }
+  .modal__section {
+    margin-top: 12px;
+  }
 
   .skillIcon svg {
     width: 16px;
@@ -1482,6 +1574,33 @@
   }
   .timelineItem__top {
     gap: 8px;
+  }
+
+  .modalOverlay {
+    padding: 8px;
+  }
+  .modal {
+    border-radius: 20px 20px 0 0;
+  }
+  .modal__header {
+    padding: 14px 14px 0;
+  }
+  .modal__title {
+    font-size: 20px;
+  }
+  .modal__grid {
+    padding: 12px 14px 14px;
+    gap: 12px;
+  }
+  .modal__poster {
+    height: 160px;
+  }
+  .modal__links {
+    grid-template-columns: 1fr; /* Stack buttons */
+    gap: 6px;
+  }
+  .modal__links .btn {
+    width: 100%;
   }
 }
 
