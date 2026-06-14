@@ -136,8 +136,7 @@ export default function Navbar() {
           <a className="navbar__talk" href="mailto:ryanhillfree@gmail.com">
             Let's Talk
           </a>
-          <button
-            type="button"
+          <button type="button"
             className="navbar__hamburger"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? 'Close menu' : 'Open menu'}

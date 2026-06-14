@@ -29,7 +29,7 @@ export default function Contact() {
   }
 
   return (
-    <SectionReveal id="contact" className="section">
+    <SectionReveal id="contact" className="section section--contact">
       <div className="container contact">
         <header className="contactHeader">
           <h2 className="sectionHeader__title">Contact Me</h2>
