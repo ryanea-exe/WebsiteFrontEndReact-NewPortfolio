@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react'
 import SectionReveal from './SectionReveal'
 import { MdEmail } from 'react-icons/md'
-import '../Contact.css'
 import {
   FaGithub,
   FaInstagram,
