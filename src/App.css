@@ -1142,6 +1142,7 @@
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.05);
   padding: 14px;
+  text-align: center;
 }
 
 .stat__v {
@@ -1296,7 +1297,17 @@
     grid-template-columns: 1fr;
   }
   .stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr); /* Tetap 3 kolom */
+    gap: 10px;
+  }
+  .stat {
+    padding: 12px;
+  }
+  .stat__v {
+    font-size: 16px;
+  }
+  .stat__k {
+    font-size: 12px;
   }
 
   .skillsGrid {
@@ -1406,11 +1417,20 @@
   .aboutCard__p {
     font-size: 13px;
   }
+  .stats {
+    grid-template-columns: repeat(3, 1fr); /* Tetap 3 kolom sejajar */
+    gap: 8px;
+  }
+  .stat {
+    padding: 10px 8px;
+  }
   .stat__v {
     font-size: 14px;
+    letter-spacing: -0.2px;
   }
   .stat__k {
-    font-size: 13px;
+    font-size: 11px;
+    margin-top: 4px;
   }
 
   .timeline {
@@ -1610,6 +1630,23 @@
   }
   .modal__links .btn {
     width: 100%;
+  }
+
+  .stats {
+    grid-template-columns: repeat(3, 1fr); /* Tetap 3 kolom */
+    gap: 6px;
+  }
+  .stat {
+    padding: 8px 6px;
+    border-radius: 14px;
+  }
+  .stat__v {
+    font-size: 13px;
+    letter-spacing: -0.1px;
+  }
+  .stat__k {
+    font-size: 10px;
+    margin-top: 3px;
   }
 }
 
