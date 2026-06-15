@@ -98,6 +98,7 @@ export default function HeroOrbit({
         <img src={image}
           alt="Profile"
           className="
+            hero__avatar
             w-28 h-28
             sm:w-32 sm:h-32
             md:w-40 md:h-40
