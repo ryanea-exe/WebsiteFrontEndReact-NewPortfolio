@@ -1,7 +1,7 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import SectionReveal from './SectionReveal'
 
-import { FiExternalLink, FiGithub, FiMoreHorizontal } from 'react-icons/fi'
+import { FiExternalLink, FiGithub, FiMoreHorizontal, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { createPortal } from 'react-dom'
 
 const PROJECTS = [
@@ -9,11 +9,22 @@ const PROJECTS = [
     id: 'project-1',
     title: 'WNA Tracking System',
     liveDemoUrl: 'https://www.linkedin.com/posts/ryan-erlangga-ardiansyah_laravel-webdevelopment-fullstackdeveloper-ugcPost-7467056578592964608-rFBx/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACH8VVgB3TsOGz8rhBvscTxV7UOXQ_VUB3Q',
-    githubUrl: 'https://github.com/ryanea-exe/WebsiteLaravel11-TrackingWNAKanimPonorogo2.git' ,
+    githubUrl: 'https://github.com/ryanea-exe/WebsiteLaravel11-TrackingWNAKanimPonorogo2.git',
     summary:
       'Developed a full-stack web application for foreign national monitoring, integrating data management, analytics dashboards, automated notifications, and reporting systems.',
     tech: ['Laravel', 'PHP', 'Tailwind', 'MySQL', 'etc.'],
-    image: '/login-tracking-wna.png',
+    images: [
+      '/login-trackingwna.png',
+      '/trackingwna-1.png', // Tambahkan gambar tambahan
+      '/trackingwna-2.png',
+      '/trackingwna-3.png',
+      '/trackingwna-4.png',
+      '/trackingwna-5.png',
+      '/trackingwna-6.png',
+      '/trackingwna-7.png',
+      '/trackingwna-8.png',
+      '/trackingwna-9.png',
+    ],
     details: {
       challenges: [
         '• Handling complex immigration data across multiple categories.',
@@ -36,7 +47,17 @@ const PROJECTS = [
     summary:
       'Built a full-stack inventory and asset management platform with workflow automation, maintenance tracking, reporting, and role-based access control.',
     tech: ['Laravel', 'PHP', 'TypeScript', 'Tailwind', 'etc.'],
-    image: '/login-singobarong.png',
+    images: [
+      '/login-singobarong.png',
+      '/singobarong-1.png', // Tambahkan gambar tambahan
+      '/singobarong-2.png',
+      '/singobarong-3.png',
+      '/singobarong-4.png',
+      '/singobarong-5.png',
+      '/singobarong-6.png',
+      '/singobarong-7.png',
+      '/singobarong-8.png',
+    ],
     details: {
       challenges: [
         '• Ensuring accurate asset tracking and stock monitoring.',
@@ -57,17 +78,22 @@ const PROJECTS = [
     liveDemoUrl: 'https://sdawetjabung.com/visit-visa',
     githubUrl: '-',
     summary: 'Built a responsive WordPress website with customized content management features to streamline information publishing and administration.',
-
     tech: ['WordPress', 'HTML', 'CSS', 'Etc.'],
-    image: '/foreigners-sdawetjabung.png',
+    images: [
+      '/sdawetjabung-foreigners.png',
+      '/sdawetjabung-visitvisa.png', // Tambahkan gambar tambahan
+      '/sdawetjabung-staypermit.png',
+      '/sdawetjabung-tariffs.png',
+      '/sdawetjabung-overstay.png',
+    ],
     details: {
       challenges: [
-        '• Maintaining organized and scalable website content.', 
+        '• Maintaining organized and scalable website content.',
         '• Optimizing website performance and usability.',
         '• Keeping website content organized and easy to update.',
       ],
       solutions: [
-        '• Leveraged WordPress CMS for efficient content administration.', 
+        '• Leveraged WordPress CMS for efficient content administration.',
         '• Applied responsive design and performance optimization techniques.',
         '• Utilized WordPress content management features for streamlined updates.',
       ],
@@ -78,10 +104,35 @@ const PROJECTS = [
 
 function Modal({ open, onClose, project }) {
   const el = document.getElementById('root')
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  // Reset index saat project berubah
+  useEffect(() => {
+    if (project) {
+      setCurrentImageIndex(0)
+    }
+  }, [project])
+
   if (!project || !el) return null
 
-  // Render tetap ada untuk animasi tutup.
-  // Saat open=false, class diturunkan oleh parent (modalVisible).
+  const images = project.images || [project.image] // Fallback ke image tunggal
+  const totalImages = images.length
+  const hasMultipleImages = totalImages > 1
+
+  const goToPrevImage = (e) => {
+    e.stopPropagation()
+    setCurrentImageIndex((prev) => (prev === 0 ? totalImages - 1 : prev - 1))
+  }
+
+  const goToNextImage = (e) => {
+    e.stopPropagation()
+    setCurrentImageIndex((prev) => (prev === totalImages - 1 ? 0 : prev + 1))
+  }
+
+  const goToImage = (index) => {
+    setCurrentImageIndex(index)
+  }
+
   const overlayClass = open ? 'modalOverlay modalOverlay--open' : 'modalOverlay'
   const modalClass = open ? 'modal modal--open' : 'modal'
 
@@ -135,7 +186,58 @@ function Modal({ open, onClose, project }) {
           </div>
 
           <div className="modal__right">
-            <img className="modal__poster" src={project.image} alt="" />
+            {/* Carousel */}
+            <div className="modal__carousel">
+              <div className="modal__carousel-container">
+                <img 
+                  className="modal__poster" 
+                  src={images[currentImageIndex]} 
+                  alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                />
+                
+                {hasMultipleImages && (
+                  <>
+                    <div 
+                      className="modal__carousel-btn-wrapper modal__carousel-btn-wrapper--prev"
+                      onClick={goToPrevImage}
+                    >
+                      <button 
+                        className="modal__carousel-btn"
+                        aria-label="Previous image"
+                      >
+                        <FiChevronLeft />
+                      </button>
+                    </div>
+                    <div 
+                      className="modal__carousel-btn-wrapper modal__carousel-btn-wrapper--next"
+                      onClick={goToNextImage}
+                    >
+                      <button 
+                        className="modal__carousel-btn"
+                        aria-label="Next image"
+                      >
+                        <FiChevronRight />
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {/* Dots indicator */}
+              {hasMultipleImages && (
+                <div className="modal__carousel-dots">
+                  {images.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`modal__carousel-dot ${index === currentImageIndex ? 'modal__carousel-dot--active' : ''}`}
+                      onClick={() => goToImage(index)}
+                      aria-label={`Go to image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+
             <div className="modal__section">
               <h4 className="modal__h">Tech Stack</h4>
               <div className="chips chips--dense">
@@ -189,13 +291,11 @@ export default function Projects() {
 
   const openModal = (id) => {
     setActiveId(id)
-    // jalankan animasi buka setelah state render
     requestAnimationFrame(() => setModalVisible(true))
   }
 
   const closeModal = () => {
     setModalVisible(false)
-    // tunggu animasi tutup selesai
     setTimeout(() => setActiveId(null), 220)
   }
 
@@ -212,7 +312,7 @@ export default function Projects() {
             <article key={p.id} className="projectCard">
               <div className="projectCard__media" aria-hidden="true">
                 <div className="projectCard__bg" />
-                <img className="projectCard__img" src={p.image} alt="" />
+                <img className="projectCard__img" src={p.images?.[0] || p.image} alt="" />
               </div>
 
               <div className="projectCard__body">
