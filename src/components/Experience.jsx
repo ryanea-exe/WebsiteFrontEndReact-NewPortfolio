@@ -1,6 +1,6 @@
 import SectionReveal from './SectionReveal'
 
-const EXPERIENCE = [
+const EXPERIENCES = [
   {
     company: 'Kantor Imigrasi Kelas II Non TPI Ponorogo',
     position: 'System Manager & Software Engineer',
@@ -56,21 +56,21 @@ const EXPERIENCE = [
   },
 ]
 
-export default function Experience() {
+export default function Experiences() {
   return (
-    <SectionReveal id="experience" className="section">
+    <SectionReveal id="experiences" className="section">
       <div className="container">
         <header className="sectionHeader">
-          <h2 className="sectionHeader__title">Work Experience</h2>
+          <h2 className="sectionHeader__title">Work Experiences</h2>
           <p className="sectionHeader__desc">Summary of my career journey.</p>
         </header>
 
         <div className="timeline">
-          {EXPERIENCE.map((item, idx) => (
+          {EXPERIENCES.map((item, idx) => (
             <article key={item.company} className="timelineItem">
               <div className="timelineItem__marker" aria-hidden="true">
                 <span className="timelineItem__dot" />
-                {idx !== EXPERIENCE.length - 1 && <span className="timelineItem__line" />}
+                {idx !== EXPERIENCES.length - 1 && <span className="timelineItem__line" />}
               </div>
               <div className="timelineItem__content">
                 <div className="timelineItem__top">
