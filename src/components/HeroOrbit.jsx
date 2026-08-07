@@ -25,6 +25,7 @@ export default function HeroOrbit({
                     translate(-50%, -50%)
                     rotate(${angle}deg)
                     translateX(${radius}px)
+                    rotate(-${angle}deg)
                 `,
               }}
             >
@@ -67,6 +68,7 @@ export default function HeroOrbit({
                     translate(-50%, -50%)
                     rotate(${angle}deg)
                     translateX(${radius}px)
+                    rotate(-${angle}deg)
                 `,
               }}
             >

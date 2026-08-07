@@ -6,7 +6,7 @@ import HeroOrbit from './HeroOrbit'
 import profileImage from '/avatar.png'
 
 import {
-  FaTools, 
+  FaTools,
   FaCode,
   FaHtml5,
   FaCss3,
@@ -101,7 +101,7 @@ export default function Hero() {
           </h1>
           <h2 className="hero__subtitle">Web Developer</h2>
           <p className="hero__desc">
-            Web Developer & Software Engineer | Machine Learning Cohort at Bangkit Academy 2024 | 
+            Web Developer & Software Engineer | Machine Learning Cohort at Bangkit Academy 2024 |
             Bachelor of Computer Science | Building a Data Inventory System, Foreign Tracking System, & Scheduling Application
           </p>
 
@@ -135,10 +135,10 @@ export default function Hero() {
 
         <div className="hero__media" aria-hidden="true">
           <div className="hero__frame" />
-            <HeroOrbit
-              image={profileImage}
-              icons={orbitIcons}
-            />
+          <HeroOrbit
+            image={profileImage}
+            icons={orbitIcons}
+          />
         </div>
       </div>
     </SectionReveal>
